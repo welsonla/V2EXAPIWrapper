@@ -26,7 +26,7 @@
         <attribute name="title" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
         <attribute name="titleAlternative" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="topicsCount" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="topics" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="V2EXTopic" inverseName="node" inverseEntity="V2EXTopic" syncable="YES"/>
+        <relationship name="topics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="V2EXTopic" inverseName="node" inverseEntity="V2EXTopic" syncable="YES"/>
     </entity>
     <entity name="V2EXReply" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
@@ -63,10 +63,10 @@
     </entity>
     <elements>
         <element name="V2EXMember" positionX="160" positionY="192" width="128" height="255"/>
-        <element name="V2EXNode" positionX="160" positionY="192" width="128" height="195"/>
-        <element name="V2EXReply" positionX="160" positionY="192" width="128" height="135"/>
-        <element name="V2EXSiteInfo" positionX="160" positionY="192" width="128" height="105"/>
-        <element name="V2EXSiteStats" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="V2EXTopic" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="V2EXNode" positionX="520" positionY="183" width="128" height="195"/>
+        <element name="V2EXReply" positionX="342" positionY="450" width="128" height="135"/>
+        <element name="V2EXSiteInfo" positionX="358" positionY="63" width="128" height="105"/>
+        <element name="V2EXSiteStats" positionX="180" positionY="63" width="128" height="90"/>
+        <element name="V2EXTopic" positionX="342" positionY="198" width="128" height="225"/>
     </elements>
 </model>

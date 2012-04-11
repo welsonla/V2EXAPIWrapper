@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11D50" minimumToolsVersion="Xcode 4.1" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="V2EXMember" syncable="YES">
+        <attribute name="avatarLarge" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatarMini" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatarNormal" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="memberID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="memberURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tagline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="twitter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="website" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="replies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="V2EXReply" inverseName="member" inverseEntity="V2EXReply" syncable="YES"/>
+        <relationship name="topics" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="V2EXTopic" inverseName="member" inverseEntity="V2EXTopic" syncable="YES"/>
+    </entity>
+    <entity name="V2EXNode" syncable="YES">
+        <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="footer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="header" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="nodeURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="titleAlternative" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicsCount" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="topics" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="V2EXTopic" inverseName="node" inverseEntity="V2EXTopic" syncable="YES"/>
+    </entity>
+    <entity name="V2EXReply" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastModified" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="replyID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="member" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="V2EXMember" inverseName="replies" inverseEntity="V2EXMember" syncable="YES"/>
+        <relationship name="topic" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="V2EXTopic" inverseName="replies" inverseEntity="V2EXTopic" syncable="YES"/>
+    </entity>
+    <entity name="V2EXSiteInfo" syncable="YES">
+        <attribute name="domain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="siteDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="slogan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="V2EXSiteStats" syncable="YES">
+        <attribute name="memberMax" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="siteAPI" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topicMax" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="V2EXTopic" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="contentRendered" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastModified" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastTouched" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="repliesCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="topicID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="topicURLString" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="member" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="V2EXMember" inverseName="topics" inverseEntity="V2EXMember" syncable="YES"/>
+        <relationship name="node" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="V2EXNode" inverseName="topics" inverseEntity="V2EXNode" syncable="YES"/>
+        <relationship name="replies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="V2EXReply" inverseName="topic" inverseEntity="V2EXReply" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="V2EXMember" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="V2EXNode" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="V2EXReply" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="V2EXSiteInfo" positionX="160" positionY="192" width="128" height="105"/>
+        <element name="V2EXSiteStats" positionX="160" positionY="192" width="128" height="90"/>
+        <element name="V2EXTopic" positionX="160" positionY="192" width="128" height="225"/>
+    </elements>
+</model>

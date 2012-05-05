@@ -1,7 +1,10 @@
-# V2EXAPIWrapper for iOS / MacOS
+# V2EX API Wrapper for iOS / MacOS
 
-A unofflical Objective-C API wrapper for [Project Babel 2](https://github.com/livid/v2ex). 
+An unofflical Objective-C API wrapper for [Project Babel 2](https://github.com/livid/v2ex). 
+
 **Now compatible with Project Babel 3.**
+
+__Lightweight fork comming soon…__
 
 
 ## Features
@@ -11,17 +14,17 @@ A unofflical Objective-C API wrapper for [Project Babel 2](https://github.com/li
 * CoreData powered presistent requests for offline cache.
 
 
-## Installation of dependences
+## Dependences & Requirements
 
-* Install [CocoaPods](https://github.com/CocoaPods/CocoaPods)
-* `cd V2EXAPIWrapper`
-* `pod install` # download RestKit 0.10.0 automatically
+* [CocoaPods](https://github.com/CocoaPods/CocoaPods). Make sure to run `pod install` before compiling. After that RestKit 0.10.0 would be installed.
+* iOS 4.3+ / Mac OS X 10.6+ 
+* XCode 4+
 
 
 ## Usage
 * `#import "V2EXAPIWrapper.h"`
 
-Dumping all nodes asynchronously is very easy:
+* Dumping all nodes asynchronously is very easy:
 
     [[V2EXAPIWrapper shared] loadNodes:^(NSError *error, NSArray *nodes) {
         NSMutableArray *nodesArray = [NSMutableArray array];
@@ -31,7 +34,7 @@ Dumping all nodes asynchronously is very easy:
         NSLog(@"Nodes: %@", [nodesArray componentsJoinedByString:@","]);
     }];
 
-See *V2EXAPIWrapper.h* for more methods.
+* See also *V2EXAPIWrapper.h* for more methods.
 
 
 ## License

@@ -22,9 +22,10 @@ __Lightweight fork comming soon…__
 
 
 ## Usage
-* `#import "V2EXAPIWrapper.h"`
 
-* Dumping all nodes asynchronously is very easy:
+`#import "V2EXAPIWrapper.h"`
+
+Dumping all nodes asynchronously is very easy:
 
     [[V2EXAPIWrapper shared] loadNodes:^(NSError *error, NSArray *nodes) {
         NSMutableArray *nodesArray = [NSMutableArray array];
@@ -34,7 +35,7 @@ __Lightweight fork comming soon…__
         NSLog(@"Nodes: %@", [nodesArray componentsJoinedByString:@","]);
     }];
 
-* See also *V2EXAPIWrapper.h* for more methods.
+See also *V2EXAPIWrapper.h* for more methods.
 
 
 ## License

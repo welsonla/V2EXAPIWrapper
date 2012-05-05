@@ -74,7 +74,9 @@
 
 @interface V2EXReply : NSManagedObject
 @property (nonatomic, strong) NSNumber *replyID;
+@property (nonatomic, strong) NSNumber *thanks;
 @property (nonatomic, strong) NSString *content;
+@property (nonatomic, strong) NSString *contentRendered;
 @property (nonatomic, assign) V2EXMember *member;
 @property (nonatomic, strong) NSDate *created;
 @property (nonatomic, strong) NSDate *lastModified;

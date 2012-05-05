@@ -36,7 +36,7 @@
 		D7AB02BB1535C0A6001284CA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D7AB02D51535C43B001284CA /* V2EX.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = V2EX.xcdatamodel; sourceTree = "<group>"; };
 		D7AB02D61535C43B001284CA /* V2EXAPIObjectMappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXAPIObjectMappings.h; sourceTree = "<group>"; };
-		D7AB02D71535C43B001284CA /* V2EXAPIObjectMappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXAPIObjectMappings.m; sourceTree = "<group>"; };
+		D7AB02D71535C43B001284CA /* V2EXAPIObjectMappings.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = V2EXAPIObjectMappings.m; sourceTree = "<group>"; tabWidth = 2; };
 		D7AB02D81535C43B001284CA /* V2EXAPIWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = V2EXAPIWrapper.h; sourceTree = "<group>"; };
 		D7AB02D91535C43B001284CA /* V2EXAPIWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = V2EXAPIWrapper.m; sourceTree = "<group>"; };
 		D7AB02E71535D870001284CA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };

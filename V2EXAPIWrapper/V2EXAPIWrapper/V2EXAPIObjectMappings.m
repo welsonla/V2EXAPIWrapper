@@ -31,7 +31,7 @@
 @end
 
 @implementation V2EXReply
-@dynamic replyID, content, member, topic, created, lastModified;
+@dynamic replyID, thanks, content, contentRendered, member, topic, created, lastModified;
 @end
 
 @implementation V2EXAPIObjectMappings
@@ -164,12 +164,12 @@
     _replyMapping = [RKManagedObjectMapping mappingForClass:[V2EXReply class]
                                        inManagedObjectStore:[V2EXAPIObjectMappings objectStore]];
     [_replyMapping mapKeyPath:@"id" toAttribute:@"replyID"];
+    [_replyMapping mapKeyPath:@"thanks" toAttribute:@"thanks"];
     [_replyMapping mapKeyPath:@"content" toAttribute:@"content"];
-//    [_replyMapping mapKeyPath:@"created" toAttribute:@"created"];
-//    [_replyMapping mapKeyPath:@"last_modified" toAttribute:@"lastModified"];
-//    
-//    [_replyMapping mapKeyPath:@"member" toRelationship:@"member" withMapping:[self memberMapping]];
-//    [_replyMapping mapKeyPath:@"topic" toRelationship:@"topic" withMapping:[self topicMapping]];
+    [_replyMapping mapKeyPath:@"content_rendered" toAttribute:@"contentRendered"];
+    [_replyMapping mapKeyPath:@"created" toAttribute:@"created"];
+    [_replyMapping mapKeyPath:@"last_modified" toAttribute:@"lastModified"];
+    [_replyMapping mapKeyPath:@"member" toRelationship:@"member" withMapping:[self memberMapping]];
     _replyMapping.primaryKeyAttribute = @"replyID";
   }
   return _replyMapping;

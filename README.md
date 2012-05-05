@@ -1,19 +1,22 @@
-## V2EXAPIWrapper for iOS / MacOS
+# V2EXAPIWrapper for iOS / MacOS
 
-A unofflical Objective-C API wrapper for [Project Babel 2](https://github.com/livid/v2ex).
+A unofflical Objective-C API wrapper for [Project Babel 2](https://github.com/livid/v2ex). 
+**Now compatible with Project Babel 3.**
 
 
 ## Features
----
-* Singleton
-* Block based instance methods
-* CoreData powered presistent requests for offline cache
+
+* Singleton. `[V2EXAPIWrapper shared]`
+* Block based instance methods.
+* CoreData powered presistent requests for offline cache.
+
 
 ## Installation of dependences
----
+
 * Install [CocoaPods](https://github.com/CocoaPods/CocoaPods)
 * `cd V2EXAPIWrapper`
 * `pod install` # download RestKit 0.10.0 automatically
+
 
 ## Usage
 * `#import "V2EXAPIWrapper.h"`
@@ -29,6 +32,7 @@ Dumping all nodes asynchronously is very easy:
     }];
 
 See *V2EXAPIWrapper.h* for more methods.
+
 
 ## License
 Copyright (c) 2012, Lex Tang

@@ -31,6 +31,7 @@ typedef void (^V2EXMemberHandler)(NSError *error, V2EXMember *member);
 - (void)loadSiteInfo:(V2EXSiteInfoHandler)infoHandler;
 - (void)loadNodes:(V2EXNodesHander)nodesHandler;
 - (void)loadNodeByID:(uint)ID handler:(V2EXNodeHander)nodeHandler;
+- (void)loadNodeByName:(NSString*)nodeName handler:(V2EXNodeHander)nodeHandler;
 - (void)loadLatestTopics:(V2EXTopicsHandler)topicsHandler;
 - (void)loadTopicByID:(uint)ID handler:(V2EXTopicHandler)topicHandler;
 - (void)loadTopicsByUsername:(NSString*)username handler:(V2EXTopicsHandler)topicsHandler;

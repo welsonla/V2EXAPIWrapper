@@ -89,6 +89,21 @@ static RKObjectManager *_manager;
   }];
 }
 
+- (void)loadNodeByName:(NSString*)nodeName handler:(V2EXNodeHander)nodeHandler
+{
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:nodeName, @"name", nil];
+    NSString *path = [@"/nodes/show.json" stringByAppendingQueryParameters:params];
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:path usingBlock:^(RKObjectLoader* loader) {
+        loader.objectMapping = [[V2EXAPIObjectMappings shared] nodeMapping];
+        loader.onDidLoadObject = ^(id result){
+            nodeHandler(nil, result);
+        };
+        loader.onDidFailLoadWithError = ^(NSError *error){
+            nodeHandler(error, nil);
+        };
+    }];
+}
+
 - (void)loadLatestTopics:(V2EXTopicsHandler)topicsHandler
 {
   [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/topics/latest.json" usingBlock:^(RKObjectLoader* loader) {
